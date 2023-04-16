@@ -225,6 +225,7 @@ var TomarUnNumero = (Numero) =>{ //Crear funcion con su parametro
     }
 }
 console.log(TomarUnNumero(-2)) //-8
+console.log(TomarUnNumero(2)) //4
 
 //Ejercicio 23- Escribe una función que tome una cadena como parámetro y devuelva la
 //cadena en orden inverso. Debe emplear el ciclo for.
@@ -237,7 +238,7 @@ function TomarCadena(Cadena) {
     return CadenaInvertida;
   }
     
-    console.log(TomarCadena("Hola")); // Salida: Hola
+    console.log(TomarCadena("Hola")); // Salida: aloH
 
 
 //Ejercicio 24- Escribe una función que tome dos números como parámetros y devuelva el
@@ -294,3 +295,59 @@ var FuncionBooleano = (Booleano1, Booleano2, Booleano3) => {
 console.log(FuncionBooleano(true, true, false)); // true
 console.log(FuncionBooleano(false, false, false)); //false
 console.log(FuncionBooleano(true, false, false)); //true
+
+//Ejercicio 29.Escribe una función que tome dos parámetros numéricos y un parámetro
+//booleano. Si el tercer parámetro es verdadero, la función debe devolver el
+//resultado de elevar el primer parámetro a la potencia del segundo parámetro,
+//de lo contrario, debe devolver la raíz cuadrada del primer parámetro.
+
+var BooleanoFuncion = (Numero1, Numero2, Booleano) => {
+    if (Booleano) {
+        return Math.pow(Numero1, Numero2); // elevar el primer numero a la potencia del numero dos
+      } else {
+        return Math.sqrt(Numero1); // devuelve la raíz cuadrada del primer numero
+      }
+}
+console.log(BooleanoFuncion(3, 4, true)); //81
+console.log(BooleanoFuncion(3, 4.6, false)); //1.7320
+
+//Ejercicio 30.Escribe una función que tome un arreglo de strings como parámetro y
+//devuelva un nuevo arreglo con todas las palabras en minúscula.
+
+var FuncionArreglo = (CadenaParametro) => {
+    var MiArreglo = [];
+    for (var i = 0; i < CadenaParametro.length; i++) {
+        MiArreglo.push(CadenaParametro[i].toLowerCase()); // convierte cada elemento a minúsculas y lo agrega al nuevo arreglo
+    }
+    return MiArreglo;
+  }
+console.log(FuncionArreglo(["HOLA MUNDO"])); //hola mundo
+
+//Ejercicio 31.Escribe una función en JavaScript que reciba un arreglo de números y retorne
+//el promedio de todos los elementos del arreglo.
+
+var Promedio = (MiArreglo) => { //toma como argumento un arreglo de números.
+    let suma = 0; //Declaramos una constante suma para inicializar la suma que se inicializa en cero
+    for(let i = 0; i < MiArreglo.length; i++) { //recorrer todos los elementos del arreglo.
+      suma += MiArreglo[i]; 
+    }
+    return suma / MiArreglo.length; //Se suma y se divide con el arreglo
+  }
+  
+  console.log(Promedio([3, 6, 8, 10])); //6.75
+
+//Ejercicio 32.Dado un arreglo de números, escribe una función que devuelva la suma de
+//todos los números pares. Si el arreglo está vacío o no contiene números
+//pares, la función deberá devolver 0.
+
+function DevolverSumaSiEsPar (Numeros) {
+    let suma = 0; //Inicializamos la suma
+    for (let i = 0; i < Numeros.length; i++) {
+        if (Numeros[i] % 2 === 0) { //si es par
+            suma += Numeros[i]; //Sumarlo si no mandar 0
+        }
+    }
+    return suma
+}
+console.log(DevolverSumaSiEsPar([])); //0
+console.log(DevolverSumaSiEsPar([4, 4, 4])); //12
