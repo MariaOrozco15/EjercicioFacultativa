@@ -283,3 +283,14 @@ var FuncionBooleano = (Numero1, Numero2, Bandera) =>{
 }
 console.log(FuncionBooleano(1, 3, true)); //3
 console.log(FuncionBooleano(5, 3, false)); //2
+
+//Ejercicio 28.Escribe una función que tome tres parámetros booleanos y devuelva
+//verdadero si al menos uno de los tres parámetros es verdadero, de lo
+//contrario, debe devolver falso.
+
+var FuncionBooleano = (Booleano1, Booleano2, Booleano3) => {
+    return Booleano1 || Booleano2 || Booleano3;
+}
+console.log(FuncionBooleano(true, true, false)); // true
+console.log(FuncionBooleano(false, false, false)); //false
+console.log(FuncionBooleano(true, false, false)); //true
